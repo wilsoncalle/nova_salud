@@ -99,12 +99,3 @@ pm run dev
 
 - Dashboard con métricas importantes
 
-
-
-## Desarrollado por
-
-
-
-[Tu nombre]
-
->>>>>>> 9f96572 (La subida(?))
