@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# nova_salud
-=======
 
 # Nova Salud - Sistema de Gestión para Botica
 
