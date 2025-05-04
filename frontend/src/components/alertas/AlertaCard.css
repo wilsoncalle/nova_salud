@@ -1,0 +1,82 @@
+.alerta-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-bottom: 18px;
+  padding: 18px 20px 12px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: box-shadow 0.2s;
+  position: relative;
+}
+.alerta-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.alerta-tipo {
+  color: #fff;
+  font-weight: bold;
+  padding: 2px 12px;
+  border-radius: 12px;
+  font-size: 0.95em;
+  margin-right: 8px;
+}
+.alerta-estado.activa {
+  background: #ffeb3b;
+  color: #333;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 2px 10px;
+}
+.alerta-estado.resuelta {
+  background: #bdbdbd;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 2px 10px;
+}
+.alerta-card-body {
+  font-size: 1em;
+  margin: 8px 0 0 0;
+}
+.alerta-producto {
+  font-weight: 600;
+  color: #2196f3;
+}
+.alerta-mensaje {
+  margin: 6px 0;
+  color: #444;
+}
+.alerta-fecha {
+  font-size: 0.93em;
+  color: #888;
+}
+.alerta-card-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.btn-resolver {
+  background: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 14px;
+  cursor: pointer;
+}
+.btn-eliminar {
+  background: #f44336;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 14px;
+  cursor: pointer;
+}
+.btn-resolver:hover {
+  background: #388e3c;
+}
+.btn-eliminar:hover {
+  background: #c62828;
+}

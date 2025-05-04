@@ -1,0 +1,90 @@
+/* 
+ * Layout.css
+ * Estilos para el componente Layout principal de Nova Salud
+ * Diseñado con estética moderna inspirada en Apple
+ */
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--bg-secondary);
+}
+
+/* Contenido principal */
+.main-content {
+  flex: 1;
+  margin-left: 240px; /* Ancho del sidebar */
+  width: calc(100% - 240px);
+  transition: margin-left 0.3s ease, width 0.3s ease;
+}
+
+.content-container {
+  padding: var(--spacing-xl);
+  margin-top: 70px; /* Altura del header */
+  min-height: calc(100vh - 70px);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .main-content {
+    margin-left: 200px;
+    width: calc(100% - 200px);
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+  
+  .content-container {
+    padding: var(--spacing-lg);
+  }
+}
+
+/* Overriding Toastify styles for Apple-like notifications */
+:root {
+  --toastify-color-success: var(--success);
+  --toastify-color-error: var(--danger);
+  --toastify-color-warning: var(--warning);
+  --toastify-color-info: var(--info);
+  --toastify-font-family: var(--font-sans);
+}
+
+.Toastify__toast {
+  border-radius: var(--border-radius-md);
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow-md);
+  font-family: var(--font-sans);
+  padding: 12px 16px;
+}
+
+.Toastify__toast-body {
+  font-weight: 500;
+}
+
+.Toastify__close-button {
+  opacity: 0.7;
+}
+
+.Toastify__close-button:hover {
+  opacity: 1;
+}
+
+/* Animation */
+.content-container {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

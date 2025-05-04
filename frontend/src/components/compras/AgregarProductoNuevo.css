@@ -1,0 +1,94 @@
+.agregar-producto-nuevo {
+  margin-bottom: var(--spacing-lg);
+  background-color: var(--bg-tertiary);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-md);
+  border: 1px solid var(--border-light);
+}
+
+.agregar-producto-nuevo-title {
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-md);
+}
+
+.agregar-producto-nuevo-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-md);
+  align-items: flex-end;
+}
+
+.agregar-producto-nuevo-field {
+  flex: 1;
+  min-width: 180px;
+}
+
+.agregar-producto-nuevo label {
+  font-weight: 500;
+  margin-bottom: var(--spacing-xs);
+  display: block;
+  color: var(--gray-700);
+  font-size: var(--font-size-sm);
+}
+
+.agregar-producto-nuevo input[type="text"],
+.agregar-producto-nuevo input[type="number"] {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--gray-300);
+  font-size: var(--font-size-md);
+  transition: all var(--transition-fast);
+  background-color: var(--bg-primary);
+  color: var(--dark);
+  font-family: var(--font-sans);
+  appearance: none;
+}
+
+.agregar-producto-nuevo input:focus {
+  border-color: var(--info);
+  box-shadow: 0 0 0 3px rgba(90, 200, 250, 0.2);
+  outline: none;
+}
+
+.agregar-producto-nuevo-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--spacing-md);
+}
+
+.agregar-producto-nuevo button {
+  background-color: var(--warning);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-md);
+  padding: 10px 16px;
+  font-weight: 500;
+  font-size: var(--font-size-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.agregar-producto-nuevo button::before {
+  content: '+';
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.agregar-producto-nuevo button:hover {
+  background-color: #e08500;
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .agregar-producto-nuevo-form {
+    grid-template-columns: 1fr;
+  }
+}

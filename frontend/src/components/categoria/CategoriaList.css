@@ -1,0 +1,103 @@
+/* Global vars */
+:root {
+  --bg-blur: rgba(249, 249, 251, 0.8);
+  --bg-blur-dark: rgba(30, 30, 30, 0.7);
+  --border-light: rgba(0, 0, 0, 0.05);
+  --border-dark: rgba(255, 255, 255, 0.05);
+  --text: rgba(0, 0, 0, 0.85);
+  --text-light: rgba(60, 60, 67, 0.4);
+  --accent: #007AFF;
+  --btn-bg-hover: rgba(0, 0, 0, 0.03);
+  --btn-bg-active: rgba(0, 122, 255, 0.12);
+}
+
+/* Contenedor general */
+.categoria-list,
+.categoria-list-empty {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell;
+  box-sizing: border-box;
+}
+
+
+/* Lista de categorías */
+.categoria-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+/* Estado vacío o sin resultados */
+.categoria-list-empty {
+  text-align: center;
+  color: var(--text-light);
+  padding: 40px 0;
+  font-size: 0.95rem;
+}
+
+/* Tarjeta de categoría (puede aplicarse dentro de CategoriaCard) */
+.categoria-card {
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.categoria-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+
+
+/* Input de búsqueda */
+.categoria-search {
+  padding: 7px 14px;
+  border-radius: 8px;
+  border: 1px solid #b3b3b3;
+  min-width: 220px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.categoria-search:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.2);
+}
+
+
+
+/* Botones de paginación */
+.btn-secondary {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: var(--btn-bg-hover);
+  transform: translateY(-1px);
+}
+
+.btn-secondary:active:not(:disabled) {
+  background: var(--btn-bg-active);
+  color: var(--accent);
+}
+
+.btn-secondary:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+

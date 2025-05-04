@@ -1,0 +1,38 @@
+.empleado-details {
+  padding: 20px;
+}
+
+.empleado-details h2 {
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.empleado-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.detail-item.full-width {
+  grid-column: 1 / -1;
+}
+
+.detail-label {
+  font-size: 0.9em;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.detail-value {
+  font-size: 1em;
+  color: #333;
+}

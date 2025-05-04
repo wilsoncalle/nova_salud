@@ -1,0 +1,182 @@
+/* Importar estilos comunes */
+@import './VentaStyles.css';
+
+.venta-card {
+  background-color: var(--bg-card);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-lg);
+  transition: all var(--transition-base);
+  border: 1px solid var(--border-light);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.venta-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--gray-300);
+}
+
+.venta-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.venta-card-header h3 {
+  margin: 0;
+  color: var(--dark);
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+}
+
+.venta-card-actions {
+  display: flex;
+  gap: var(--spacing-xs);
+}
+
+.btn-edit,
+.btn-delete,
+.btn-details {
+  min-width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-sm);
+  padding: 0 var(--spacing-sm);
+}
+
+.btn-edit {
+  background-color: var(--primary-ghost);
+  color: var(--primary);
+}
+
+.btn-edit:hover {
+  background-color: var(--primary);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-details {
+  background-color: var(--info-ghost);
+  color: var(--info);
+}
+
+.btn-details:hover {
+  background-color: var(--info);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-delete {
+  background-color: var(--danger-ghost);
+  color: var(--danger);
+}
+
+.btn-delete:hover {
+  background-color: var(--danger);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.venta-card-content {
+  flex: 1;
+  margin-bottom: var(--spacing-md);
+}
+
+.venta-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.venta-card-info p {
+  margin: var(--spacing-xs) 0;
+  color: var(--gray-700);
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: var(--spacing-xs);
+  border-bottom: 1px solid var(--gray-200);
+  font-size: var(--font-size-sm);
+}
+
+.venta-card-info p:last-child {
+  border-bottom: none;
+}
+
+.venta-card-info strong {
+  color: var(--gray-600);
+  font-weight: 500;
+}
+
+.venta-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--spacing-sm);
+  border-top: 1px solid var(--gray-200);
+  margin-top: auto;
+}
+
+.venta-card-total {
+  font-weight: 700;
+  color: var(--primary);
+  font-size: var(--font-size-md);
+}
+
+.venta-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: var(--border-radius-pill);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.venta-status.completada {
+  background-color: var(--success-ghost);
+  color: #1e7437;
+}
+
+.venta-status.pendiente {
+  background-color: var(--warning-ghost);
+  color: #9a5700;
+}
+
+.venta-status.cancelada {
+  background-color: var(--danger-ghost);
+  color: #c41f17;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .venta-card {
+    padding: var(--spacing-md);
+  }
+  
+  .venta-card-actions {
+    position: absolute;
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+  }
+  
+  .venta-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+} 

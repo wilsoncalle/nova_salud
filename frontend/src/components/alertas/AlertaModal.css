@@ -1,0 +1,40 @@
+.alerta-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.25);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.alerta-modal {
+  background: #fff;
+  border-radius: 12px;
+  padding: 0 0 18px 0;
+  min-width: 340px;
+  max-width: 480px;
+  box-shadow: 0 2px 18px rgba(0,0,0,0.14);
+  position: relative;
+  animation: modalIn 0.18s;
+}
+@keyframes modalIn {
+  from { transform: scale(0.97); opacity: 0.7; }
+  to { transform: scale(1); opacity: 1; }
+}
+.alerta-modal-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 2em;
+  color: #888;
+  cursor: pointer;
+  z-index: 10;
+}
+.alerta-modal-close:hover {
+  color: #f44336;
+}
+.alerta-modal-content {
+  padding: 18px 28px 0 28px;
+}

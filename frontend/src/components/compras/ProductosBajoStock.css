@@ -1,0 +1,130 @@
+.productos-bajo-stock {
+  margin-bottom: var(--spacing-lg);
+  background-color: var(--bg-tertiary);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-md);
+  border: 1px solid var(--border-light);
+}
+
+.productos-bajo-stock-title {
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-md);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.productos-bajo-stock-title::before {
+  content: '⚠';
+  color: var(--warning);
+  font-size: var(--font-size-lg);
+}
+
+.productos-bajo-stock-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-md);
+  align-items: flex-end;
+}
+
+.productos-bajo-stock-field {
+  flex: 1;
+  min-width: 180px;
+}
+
+.productos-bajo-stock label {
+  font-weight: 500;
+  margin-bottom: var(--spacing-xs);
+  display: block;
+  color: var(--gray-700);
+  font-size: var(--font-size-sm);
+}
+
+.productos-bajo-stock select,
+.productos-bajo-stock input[type="number"] {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--gray-300);
+  font-size: var(--font-size-md);
+  transition: all var(--transition-fast);
+  background-color: var(--bg-primary);
+  color: var(--dark);
+  font-family: var(--font-sans);
+  appearance: none;
+}
+
+.productos-bajo-stock select {
+  padding-right: 36px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236e6e73' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+}
+
+.productos-bajo-stock input:focus,
+.productos-bajo-stock select:focus {
+  border-color: var(--success);
+  box-shadow: 0 0 0 3px rgba(52, 199, 89, 0.2);
+  outline: none;
+}
+
+.productos-bajo-stock-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--spacing-md);
+}
+
+.productos-bajo-stock button {
+  background-color: var(--success);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-md);
+  padding: 10px 16px;
+  font-weight: 500;
+  font-size: var(--font-size-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.productos-bajo-stock button::before {
+  content: '➕';
+  font-size: var(--font-size-sm);
+  line-height: 1;
+}
+
+.productos-bajo-stock button:hover {
+  background-color: #2aa44f;
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
+}
+
+.stock-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: var(--border-radius-pill);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+}
+
+.stock-badge.bajo {
+  background-color: var(--warning-ghost);
+  color: #9a5700;
+}
+
+.stock-badge.critico {
+  background-color: var(--danger-ghost);
+  color: #c41f17;
+}
+
+@media (max-width: 768px) {
+  .productos-bajo-stock-form {
+    grid-template-columns: 1fr;
+  }
+}

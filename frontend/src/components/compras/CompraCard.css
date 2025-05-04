@@ -1,0 +1,125 @@
+.compra-card {
+  background-color: var(--bg-card);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  transition: all var(--transition-base);
+  border: 1px solid var(--border-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.compra-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: var(--info);
+  border-top-left-radius: var(--border-radius-md);
+  border-bottom-left-radius: var(--border-radius-md);
+}
+
+.compra-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--gray-300);
+}
+
+.compra-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: var(--font-size-lg);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid var(--gray-200);
+  margin-bottom: var(--spacing-sm);
+}
+
+.compra-card-factura {
+  color: var(--info);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.compra-card-factura::before {
+  content: '📄';
+  font-size: var(--font-size-md);
+}
+
+.compra-card-total {
+  color: var(--success);
+  font-weight: 700;
+  background-color: var(--success-ghost);
+  padding: 4px 10px;
+  border-radius: var(--border-radius-pill);
+  font-size: var(--font-size-sm);
+}
+
+.compra-card-body {
+  font-size: var(--font-size-md);
+  color: var(--gray-700);
+  margin-bottom: var(--spacing-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.compra-card-body div {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacing-xs) 0;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.compra-card-body div:last-child {
+  border-bottom: none;
+}
+
+.compra-card-body strong {
+  color: var(--gray-600);
+  font-weight: 500;
+}
+
+.compra-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
+  padding-top: var(--spacing-sm);
+  border-top: 1px solid var(--gray-200);
+}
+
+.compra-card-actions button {
+  background-color: var(--info);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-md);
+  padding: 8px 16px;
+  font-weight: 500;
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.compra-card-actions button:hover {
+  background-color: #3980c0;
+  box-shadow: var(--shadow-sm);
+}
+
+.compra-card-actions button:last-child {
+  background-color: var(--danger);
+}
+
+.compra-card-actions button:last-child:hover {
+  background-color: #d92a22;
+}

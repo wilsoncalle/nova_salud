@@ -1,0 +1,648 @@
+/* Importar estilos de paginación */
+@import url('../common/pagination.css');
+
+/* Variables generales (mismas que el sistema de clientes para consistencia) */
+:root {
+  --primary-color: #007bff;
+  --primary-light: #e6f2ff;
+  --secondary-color: #6c757d;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #17a2b8;
+  --light-color: #f8f9fa;
+  --dark-color: #343a40;
+  --white: #ffffff;
+  --gray-100: #f8f9fa;
+  --gray-200: #e9ecef;
+  --gray-300: #dee2e6;
+  --gray-400: #ced4da;
+  --gray-500: #adb5bd;
+  --gray-600: #6c757d;
+  --gray-700: #495057;
+  --gray-800: #343a40;
+  --gray-900: #212529;
+  --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s ease;
+  --border-radius: 8px;
+  --border-radius-sm: 4px;
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* AgregarProductoNuevo.css */
+.agregar-producto-nuevo {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: var(--box-shadow);
+  border: 1px solid var(--gray-200);
+  display: grid;                      /* <<< */
+  grid-template-columns: 1fr 1fr;     /* <<< */
+  gap: 16px;                          /* <<< */
+}
+
+.agregar-producto-nuevo label {
+  display: block;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--gray-800);
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--gray-200);
+  grid-column: 1 / -1;                /* <<< ocupa toda la fila */
+}
+
+
+.agregar-producto-nuevo input {
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--border-radius-sm);
+  width: 100%;
+  font-size: 14px;
+  transition: var(--transition);
+}
+
+.agregar-producto-nuevo input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.agregar-producto-nuevo button {
+  background-color: var(--success-color);
+  color: var(--white);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  padding: 10px 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  width: 100%;
+  margin-bottom:12px ;
+}
+
+.agregar-producto-nuevo button:hover {
+  background-color: #218838;
+}
+
+/* CompraCard.css */
+.compra-card {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--gray-200);
+}
+
+.compra-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.compra-card-header {
+  background-color: var(--primary-light);
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--gray-200);
+  border-top: 3px solid #0073ff;
+}
+
+.compra-card-factura {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--primary-color);
+}
+
+
+.compra-card-total {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--success-color);
+  background-color: rgba(40, 167, 69, 0.1);
+  padding: 4px 10px;
+  border-radius: 16px;
+}
+
+.compra-card-body {
+  padding: 16px;
+  flex-grow: 1;
+  font-size: 14px;
+  color: var(--gray-700);
+}
+
+.compra-card-body div {
+  margin-bottom: 8px;
+}
+
+.compra-card-body strong {
+  color: var(--gray-800);
+  font-weight: 500;
+}
+
+.compra-card-actions {
+  display: flex;
+    justify-content: flex-end; /* Alinea todo a la izquierda */
+    gap: 8px; /* Espacio entre botones */
+    padding: 12px 16px;
+    /*background-color: var(--gray-100);*/
+    border-top: 1px solid var(--gray-200);
+  }
+
+.compra-card-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-clip: padding-box;
+  cursor: pointer;
+  transition: background-color .18s ease, box-shadow .18s ease, transform .18s ease;
+}
+
+.compra-card-actions button:first-child {
+  padding: 8px 20px;
+  font-size: 15px;
+  border-radius: 12px;
+  color: #ffa500;
+  background: rgb(239 207 144 / 20%);
+  border-color: rgba(235,203,139,1);
+}
+
+.compra-card-actions button:last-child {
+  padding: 8px 20px;
+  font-size: 15px;
+  border-radius: 12px;
+  color:#ff375f; background:rgba(255,55,95,.1); border-color:rgba(255,55,95,.3);
+}
+
+.compra-card-actions button:first-child:hover {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.15);
+  transform: translateY(-1px);
+}
+
+.compra-card-actions button:last-child:hover {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.15);
+  transform: translateY(-1px);
+}
+
+/* CompraForm.css */
+.compra-form {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  padding: 24px;
+  width: 100%;
+}
+
+.compra-form h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--gray-800);
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.compra-form h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--gray-800);
+  margin: 20px 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.compra-form .error {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: var(--danger-color);
+  padding: 10px;
+  border-radius: var(--border-radius-sm);
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.compra-form .form-group {
+  margin-bottom: 16px;
+}
+
+.compra-form label {
+  display: block;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--gray-700);
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.compra-form input,
+.compra-form select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--border-radius-sm);
+  font-size: 14px;
+  transition: var(--transition);
+}
+
+.compra-form input:focus,
+.compra-form select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.detalles-section {
+  margin: 24px 0;
+  background-color: var(--gray-100);
+  border-radius: var(--border-radius);
+  padding: 16px;
+  border: 1px solid var(--gray-200);
+}
+
+.detalles-section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+
+.detalles-section th {
+  text-align: left;
+  padding: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--gray-700);
+  border-bottom: 2px solid var(--gray-300);
+}
+
+.detalles-section td {
+  padding: 12px 10px;
+  font-size: 14px;
+  border-bottom: 1px solid var(--gray-200);
+  color: var(--gray-800);
+}
+
+.detalles-section tr:last-child td {
+  border-bottom: none;
+}
+
+.totales {
+  background-color: var(--primary-light);
+  padding: 16px;
+  border-radius: var(--border-radius);
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  font-size: 15px;
+  color: var(--gray-800);
+}
+
+.totales div:last-child {
+  font-weight: 700;
+  font-size: 18px;
+  margin-top: 8px;
+  color: var(--primary-color);
+  border-top: 1px solid rgba(0, 123, 255, 0.2);
+  padding-top: 8px;
+  width: 100%;
+  text-align: right;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.form-actions button {
+  padding: 10px 18px;
+  border-radius: var(--border-radius-sm);
+  font-weight: 500;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.form-actions button:first-child {
+  background-color: var(--gray-300);
+  color: var(--gray-800);
+}
+
+.form-actions button:last-child {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.form-actions button:first-child:hover {
+  background-color: var(--gray-400);
+}
+
+.form-actions button:last-child:hover {
+  background-color: #0069d9;
+}
+
+.form-actions button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+/* Igual que para .form-row en CompraForm */
+.compra-form .form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+/* Si usas la clase interna .proveedor-selector */
+.proveedor-selector {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* búsqueda + select */
+  gap: 8px;
+  align-items: center;
+}
+
+/* Ajusta etiquetas e inputs dentro */
+.proveedor-selector label {
+  margin-bottom: 4px;
+  font-size: 14px;
+  color: var(--gray-700);
+  grid-column: 1 / -1;
+}
+
+.proveedor-selector input,
+.proveedor-selector select {
+  width: 100%;
+}
+
+
+
+
+/* CompraModal.css */
+.compra-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.compra-modal-content {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  width: 90%;
+  max-width: 700px;
+  max-height: 100vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.compra-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--gray-600);
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: var(--transition);
+  z-index: 10;
+}
+
+.compra-modal-close:hover {
+  background-color: var(--gray-200);
+  color: var(--gray-800);
+}
+
+
+.compras-list-header {
+  margin-bottom: 24px;
+}
+
+.compras-list-header input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--gray-300);
+  font-size: 14px;
+  background-color: var(--white);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+}
+
+.compras-list-header input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+.compras-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.compras-list p {
+  text-align: center;
+  padding: 24px;
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  color: var(--gray-600);
+}
+/* Fila de dos columnas para campos relacionados */
+.compra-form .form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+
+
+/* .form-group, label e input se mantienen igual */
+
+
+/* ProductosBajoStock.css */
+.productos-bajo-stock {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: var(--box-shadow);
+  border: 1px solid var(--gray-200);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  font-weight: bold;
+}
+
+.productos-bajo-stock label {
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--gray-800);
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--gray-200);
+  /* Hace que el label ocupe toda la fila */
+  grid-column: 1 / -1;
+}
+
+
+.productos-bajo-stock select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--border-radius-sm);
+  font-size: 14px;
+  margin-bottom: 12px;
+  background-color: var(--white);
+  transition: var(--transition);
+}
+
+.productos-bajo-stock select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.productos-bajo-stock input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--border-radius-sm);
+  font-size: 14px;
+  margin-bottom: 12px;
+  transition: var(--transition);
+}
+
+.productos-bajo-stock input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.productos-bajo-stock button {
+  background-color: var(--info-color);
+  color: var(--white);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  padding: 10px 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  width: 100%;
+  margin-bottom:12px ;
+}
+
+.productos-bajo-stock button:hover {
+  background-color: #138496;
+}
+
+/* ProveedorSelector.css */
+.proveedor-selector {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  margin-bottom: 24px;
+  box-shadow: var(--box-shadow);
+  border: 1px solid var(--gray-200);
+}
+
+.proveedor-selector label {
+  display: block;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--gray-800);
+  margin-bottom: 16px;
+}
+
+.proveedor-selector input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--border-radius-sm);
+  font-size: 14px;
+  margin-bottom: 12px;
+  transition: var(--transition);
+}
+
+.proveedor-selector input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.proveedor-selector select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--border-radius-sm);
+  font-size: 14px;
+  background-color: var(--white);
+  transition: var(--transition);
+}
+
+.proveedor-selector select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .compras-card-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .compra-modal-content {
+    width: 95%;
+    max-height: 95vh;
+  }
+  
+  .totales {
+    align-items: stretch;
+  }
+}

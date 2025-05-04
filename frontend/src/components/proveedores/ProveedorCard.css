@@ -1,0 +1,228 @@
+/* === ProveedorCard.css === */
+/* Importar estilos comunes */
+@import './ProveedoresStyles.css';
+
+/* Card container */
+.proveedor-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--bg-card);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-lg);
+  border: 1px solid var(--border-light);
+  transition: all var(--transition-base);
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: var(--spacing-md);
+}
+
+.proveedor-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: var(--primary);
+  border-top-left-radius: var(--border-radius-md);
+  border-bottom-left-radius: var(--border-radius-md);
+}
+
+.proveedor-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--gray-300);
+}
+
+/* Header area */
+.proveedor-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.proveedor-card-header h3 {
+  margin: 0;
+  color: var(--dark);
+  font-weight: 600;
+  font-size: var(--font-size-lg);
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.proveedor-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  border-radius: var(--border-radius-sm);
+  background-color: var(--primary-ghost);
+  color: var(--primary);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  padding: 0 var(--spacing-xs);
+  margin-left: var(--spacing-xs);
+  flex-shrink: 0;
+}
+
+/* Body area */
+.proveedor-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-lg);
+}
+
+.proveedor-card-body p {
+  margin: var(--spacing-xs) 0;
+  font-size: var(--font-size-sm);
+  color: var(--gray-700);
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: var(--spacing-xs);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.proveedor-card-body p:last-of-type {
+  border-bottom: none;
+}
+
+.proveedor-card-body p strong {
+  color: var(--gray-600);
+  font-weight: 500;
+}
+
+.proveedor-card-contact {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
+}
+
+.proveedor-card-contact a {
+  color: var(--primary);
+  text-decoration: none;
+  font-size: var(--font-size-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.proveedor-card-contact a:hover {
+  text-decoration: underline;
+}
+
+/* Actions buttons */
+.proveedor-card-actions {
+  display: flex;
+  gap: var(--spacing-xs);
+  margin-top: auto;
+}
+
+.proveedor-card-actions button {
+  min-width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-size: var(--font-size-sm);
+  padding: 0 var(--spacing-sm);
+}
+
+/* Details button */
+.btn-details {
+  background-color: var(--info-ghost);
+  color: var(--info);
+}
+
+.btn-details:hover {
+  background-color: var(--info);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Edit button */
+.btn-edit {
+  background-color: var(--success-ghost);
+  color: var(--success);
+}
+
+.btn-edit:hover {
+  background-color: var(--success);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Delete button */
+.btn-delete {
+  background-color: var(--danger-ghost);
+  color: var(--danger);
+}
+
+.btn-delete:hover {
+  background-color: var(--danger);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Status badge */
+.proveedor-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: var(--border-radius-pill);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.proveedor-status.activo {
+  background-color: var(--success-ghost);
+  color: #1e7437;
+}
+
+.proveedor-status.inactivo {
+  background-color: var(--danger-ghost);
+  color: #c41f17;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .proveedor-card {
+    padding: var(--spacing-md);
+  }
+  
+  .proveedor-card-actions {
+    position: absolute;
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+  }
+  
+  .proveedor-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-right: 100px;
+  }
+  
+  .proveedor-badge {
+    margin-top: var(--spacing-xs);
+    margin-left: 0;
+  }
+}

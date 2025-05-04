@@ -1,0 +1,388 @@
+/* 
+ * Header.css
+ * Estilo moderno para el header de Nova Salud inspirado en el diseño Apple
+ */
+
+ .header {
+  width: 100%;
+  height: 70px;
+  background-color: var(--bg-primary);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--spacing-xl);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-navbar);
+  margin-left: 240px;
+  width: calc(100% - 240px);
+  transition: margin-left 0.3s ease, width 0.3s ease;
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--dark);
+  margin: 0;
+  font-family: var(--font-display);
+}
+
+.header-date {
+  font-size: 13px;
+  color: var(--gray-500);
+  margin: 0;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+/* Estilos para el menú de notificaciones */
+.notificaciones-container {
+  position: relative;
+}
+
+.notificaciones-button {
+  background: none;
+  border: none;
+  
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-600);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.notificaciones-button:hover {
+  background-color: var(--gray-100);
+  color: var(--gray-800);
+}
+
+.notificaciones-badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background-color: var(--danger-color);
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notificaciones-menu {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  width: 320px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  overflow: hidden;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.notificaciones-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.notificaciones-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--gray-800);
+}
+
+.notificaciones-close {
+  background: none;
+  border: none;
+  color: var(--gray-500);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.notificaciones-close:hover {
+  background-color: var(--gray-100);
+  color: var(--gray-700);
+}
+
+.notificaciones-content {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.notificaciones-empty {
+  padding: 16px;
+  text-align: center;
+  color: var(--gray-500);
+  font-size: 14px;
+}
+
+.notificacion-item {
+  display: flex;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--gray-100);
+  cursor: pointer;
+  transition: background-color 0.2s;
+  position: relative;
+}
+
+.notificacion-item:hover {
+  background-color: var(--gray-50);
+}
+
+.notificacion-item.leida {
+  opacity: 0.7;
+}
+
+.notificacion-indicator {
+  width: 4px;
+  min-width: 4px;
+  height: 100%;
+  margin-right: 12px;
+  border-radius: 2px;
+}
+
+.notificacion-indicator.stock-bajo {
+  background-color: var(--warning-color);
+}
+
+.notificacion-indicator.stock-agotado {
+  background-color: var(--danger-color);
+}
+
+.notificacion-content {
+  flex: 1;
+}
+
+.notificacion-mensaje {
+  margin: 0 0 4px 0;
+  font-size: 14px;
+  color: var(--gray-800);
+  line-height: 1.4;
+}
+
+.notificacion-fecha {
+  font-size: 12px;
+  color: var(--gray-500);
+}
+
+.notificacion-eliminar {
+  background: none;
+  border: none;
+  color: var(--gray-400);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  opacity: 0;
+}
+
+.notificacion-item:hover .notificacion-eliminar {
+  opacity: 1;
+}
+
+.notificacion-eliminar:hover {
+  background-color: var(--gray-200);
+  color: var(--gray-700);
+}
+
+.notificaciones-footer {
+  padding: 12px 16px;
+  border-top: 1px solid var(--gray-200);
+  text-align: center;
+}
+
+.notificaciones-ver-todas {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.notificaciones-ver-todas:hover {
+  background-color: var(--primary-light);
+}
+
+.header-search {
+  display: flex;
+  align-items: center;
+  background-color: var(--gray-100);
+  border-radius: 10px;
+  padding: 6px 12px;
+  width: 280px;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.header-search:focus-within {
+  background-color: var(--bg-primary);
+  box-shadow: 0 0 0 2px var(--primary-light);
+}
+
+.header-search svg {
+  color: var(--gray-500);
+  margin-right: 8px;
+}
+
+.header-search input {
+  border: none;
+  background: none;
+  outline: none;
+  font-size: 14px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  color: var(--dark);
+}
+
+.header-search input::placeholder {
+  color: var(--gray-400);
+}
+
+.header-search-clear {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-500);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.header-search-clear:hover {
+  color: var(--gray-700);
+}
+
+.header-search-results {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  right: 0;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 1000;
+  border: 1px solid var(--border-light);
+}
+
+.header-search-result-item {
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 14px;
+  color: var(--dark);
+}
+
+.header-search-result-item:hover {
+  background-color: var(--gray-100);
+}
+
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.header-icon-button {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  color: var(--gray-600);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.header-icon-button:hover {
+  background-color: var(--gray-200);
+  color: var(--dark);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .header {
+    margin-left: 200px;
+    width: calc(100% - 200px);
+  }
+  
+  .header-search {
+    width: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    margin-left: 0;
+    width: 100%;
+    padding: 0 var(--spacing-md);
+  }
+  
+  .header-title {
+    font-size: 18px;
+  }
+  
+  .header-date {
+    display: none;
+  }
+  
+  .header-search {
+    width: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-search {
+    display: none;
+  }
+}
